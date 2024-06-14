@@ -13,7 +13,7 @@ class User(db.Model):
         self.set_password(password)
 
     def set_password(self, password):
-        self.hashed_password = generate_password_hash(password)
+        self.hashed_password = generate_password_hash(password, method='sha256')
 
     def check_password(self, password):
         return check_password_hash(self.hashed_password, password)

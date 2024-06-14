@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('main.static', filename='css/global.css') }}">
     <title>Document</title>
+    {% block links %} {% endblock %}
 </head>
+<div class="wrap">
 <body>
-    <header></header>
-    <main>{% block content %} {% endblock %}</main>
+    <header>
+        <div class="navbar">
+            <ul>
+                <li>Register</li>
+            </ul>
+        </div>
+    </header>
+    <main><div class="content">{% block content %} {% endblock %}</div></main>
     <footer></footer>
 </body>
+</div>
 </html>

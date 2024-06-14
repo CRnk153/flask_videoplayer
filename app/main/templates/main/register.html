@@ -1,13 +1,19 @@
-{% extends "base.html" %}
+{% extends "main/base.html" %}
+
+{% block links %} 
+<link rel="stylesheet" href="{{ url_for('main.static', filename='css/forms.css') }}">
+{% endblock %}
 
 {% block content %}
-<form action="#">
-    <label for="username">Input username</label>
-    <input name="username" type="text">
-
-    <label for="email">Input email</label>
-    <input name="email" type="email">
-
-    <label for="password">Input password</label> 
+<form method="POST">
+    <h2>Register</h2>
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}<br>
+    {{ form.email.label }} {{ form.email() }} <br>
+    {{ form.password.label }} {{ form.password() }}<br>
+    {{ form.submit() }}
 </form>
+{% for message in get_flashed_messages(with_categories=true) %}
+    <p>{{ message[1] }}</p>
+{% endfor %}
 {% endblock %}
