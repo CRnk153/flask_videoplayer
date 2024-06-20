@@ -1,10 +1,14 @@
 {% extends "main/base.html" %}
 
 {% block links %}
-<link rel="stylesheet" href="{{ url_for('main.static', filename='css/home.css') }}">
+<link rel="stylesheet" href="http://localhost/static/css/home.css">
 {% endblock %}
 
 {% block content %}
+{% if current_user.is_authenticated %}
+<h1>Welcome, {{current_user.username}}</h1>
+{% else %}
 <h1>Welcome!</h1>
+{% endif %}
 <p>This is webplayer, displaying videos you choose.</p>
 {% endblock %}
