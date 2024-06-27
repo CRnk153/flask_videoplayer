@@ -18,7 +18,7 @@ body{
     background-color: #664d35;
 }
 .navbar {
-
+    z-index: 998;
     background-color: #333;
     overflow: hidden;
     padding-left: 10vw;
@@ -70,18 +70,70 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
     background-color: #595959;
 }
-.menu-button i {
+#menu-button i {
     text-align: center;
     color: white; 
     background-color: #333;
     padding: 15px 24px;
 }
-.menu-button{
+#menu-button{
     border:none;
     position: absolute;
     right: 0;
     margin-right: 10vw;
+    cursor: pointer;
 }
-.menu-button i:hover{
+#menu-button i:hover{
     background-color: #454545;
+}
+.menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+  
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position:absolute;
+}
+  
+.menu ul li {
+    background-color: white;
+    min-width: 6em;
+    max-width: 6rem;
+    display: block;
+}
+  
+.menu ul li a {
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    padding: 2px;
+}
+
+.menu ul li a:hover {
+    background-color: #cacaca;
+}
+
+#flash-messages {
+    position: relative;
+    z-index: 999;
+    min-width: 100%;
+}
+.alert {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+.form-alert {
+    background-color: #ff0000;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
 }
